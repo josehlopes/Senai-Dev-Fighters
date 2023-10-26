@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://j33epgmybr0c"
+path="res://.godot/imported/deffense2.wav-5e71cac96946b5ff4ba60de7687f7207.sample"
+
+[deps]
+
+source_file="res://sounds/character sounds/javanguarda/deffense2.wav"
+dest_files=["res://.godot/imported/deffense2.wav-5e71cac96946b5ff4ba60de7687f7207.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

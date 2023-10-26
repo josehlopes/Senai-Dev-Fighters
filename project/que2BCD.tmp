@@ -1,0 +1,226 @@
+extends Node2D
+
+# Variáveis para rastrear a saúde dos jogadores
+var player1Hp = 10
+var player2Hp = 10
+
+#Variaveis para animação do player
+@onready var startButton = $StartButton
+@onready var turnLabel = $TurnLabel
+@onready var panel = $Panel  
+
+@onready var AnimatedSpriteP1 = $Javanguarda #Cria o Animated Sprite do personagem Javanguarda
+@onready var AnimationPlayerP1 = $"Javanguarda/Animation Javanguard" #Usada para chamar as animações do personagem Javanguarda
+@onready var AnimatedSpriteP2 = $MestredasTags #Cria o Animated Sprite do personagem Javanguarda
+@onready var AnimationPlayerP2 = $"MestredasTags/Animation php" #Usada para chamar as animações do personagem Javanguarda
+
+# Barra de progresso da saúde dos jogadores
+@onready var player1_hp_bar = $Inforboxplayer1/Player1HPBar #Atualiza as informações de vida do jogador1
+@onready var player2_hp_bar = $Inforboxplayer2/Player2HPBar #Atualiza as informações de vida do jogador2
+
+# Definição de jogadores e pontuação inicial
+var player1 = {
+	"name": "Javanguarda",
+	"point": 0
+}
+var player2 = {
+	"name": "Mestre das Tags",
+	"point": 0
+}
+
+# Variável para rastrear de quem é o turno atual
+var currentTurn = player2
+
+# Variáveis para controle da animação de ataque e bloqueio de respostas
+var isAttacking = false  
+var responseLocked = false 
+
+# Variável para rastrear a pergunta atual
+var currentQuestion = ""
+var usedQuestions = [] 
+
+#Inicia o que é necessário para a execução do jogo
+func _ready():
+	
+	$StartButton.pressed.connect(self._start_game) # Conecta o botão "Start" à função que inicia o jogo
+	
+	#Esconde os botões "Verdadeiro" e "Falso" e outros elementos iniciais
+	$BotaoTrue.hide() 
+	$BotaoFalse.hide() 
+	$Panel.hide()
+	$TurnLabel.hide()
+	
+	# Conecta os botões "Verdadeiro" e "Falso" às funções correspondentes
+	$BotaoTrue.pressed.connect( self._respond_True)
+	$BotaoFalse.pressed.connect(self._respond_False)
+	
+	# Inicia o jogo exibindo a primeira pergunta
+	intro_Question()
+
+func _respond_True():
+	# Quando o jogador escolhe "Verdadeiro," chama a função para verificar a resposta
+	verify_Response("verdadeira")
+
+func _respond_False():
+	# Quando o jogador escolhe "Falso," chama a função para verificar a resposta
+	verify_Response("falsa")
+	
+# Verificação da resposta do jogador
+func verify_Response(playerResponse):
+	
+	if isAttacking or responseLocked:  # Se o personagem estiver atacando ou as respostas estiverem bloqueadas, sai da função
+		return
+		
+	responseLocked = true # Bloqueia as respostas
+
+	if playerResponse == Qna.questions_and_answers[currentQuestion]["resposta_correta"]:
+		print("Resposta correta!")
+		# Atualiza a pontuação dos jogadores com base na resposta
+		
+		if playerResponse == "verdadeira":
+			$BotaoTrue.modulate = Color(0, 1, 0)
+		else:
+			$BotaoFalse.modulate = Color(0, 1, 0)
+
+
+		if currentTurn == player1:
+			isAttacking = true 
+			
+			AnimationPlayerP1.play("walk")
+			await AnimationPlayerP1.animation_finished
+			
+			isAttacking = false
+			
+			AnimatedSpriteP1.play("Atk1")
+			
+			await AnimatedSpriteP1.animation_finished
+			player2Hp -= 1
+			AnimationPlayerP2.play("take damage")
+
+			player1.point += 1
+			
+
+			AnimationPlayerP1.play("moonwalk")
+			
+			await AnimationPlayerP1.animation_finished
+			AnimatedSpriteP1.play("Javaguarda")
+			
+
+			
+		else:
+			
+			AnimationPlayerP2.play("walk")
+			await AnimationPlayerP2.animation_finished
+			
+			isAttacking = false
+			
+			AnimatedSpriteP2.play("Atk1")
+			await AnimatedSpriteP2.animation_finished
+			player1Hp -= 1
+			AnimationPlayerP1.play("take damage")
+
+			player2.point += 1
+			
+
+			AnimationPlayerP2.play("moonwalk")
+			
+			await AnimationPlayerP1.animation_finished
+			AnimatedSpriteP2.play("Php")
+			
+
+	else:
+		print("Resposta incorreta.")
+
+		if playerResponse == "verdadeira":
+			$BotaoTrue.modulate = Color(1, 0, 0)
+		else:
+			$BotaoFalse.modulate = Color(1, 0, 0)
+	
+
+	$BotaoTrue.set_disabled(true)
+	$BotaoFalse.set_disabled(true)
+	
+	# Exibe a pontuação dos jogadores
+	print(player1.name, " Pontuação: ", player1.point)
+	print(player2.name, " Pontuação: ", player2.point)
+	
+	# Atualização da barra de progressão de saúde
+	player1_hp_bar.value = player1Hp
+	player2_hp_bar.value = player2Hp
+	
+	# Alterna para o próximo jogador
+	if currentTurn == player1:
+		
+		currentTurn = player2 
+		$TurnLabel.text = "Vez do Jogador 2"
+		print("Vez do Jogador 2")
+		
+	else:
+		
+		currentTurn = player1
+		$TurnLabel.text = "Vez do Jogador 1"
+		print("Vez do Jogador 1")
+		
+	# Verifica se um jogador perdeu todas as vidas
+	if player1Hp <= 0:
+		
+		print("Player 1 perdeu!")
+		end_Game()
+		
+	if player2Hp <= 0:
+		print("Player 2 perdeu!")
+		end_Game()
+		
+
+	await get_tree().create_timer(2).timeout
+
+	# Exibe a próxima pergunta
+	intro_Question()
+
+#Configuração de novas perguntas
+func intro_Question():
+
+	responseLocked = false #Desbloquear respostas
+	$BotaoTrue.set_disabled(false)
+	$BotaoFalse.set_disabled(false)
+	
+	var available_questions = []
+	
+	for pergunta in Qna.questions_and_answers.keys():
+		if pergunta not in usedQuestions:
+			available_questions.append(pergunta)
+		
+	if available_questions.size() == 0:
+		usedQuestions = []
+		available_questions = Qna.questions_and_answers.keys()
+	
+	currentQuestion = available_questions[randi() % available_questions.size()]
+	usedQuestions.append(currentQuestion)
+	
+	# Exibe a pergunta no RichTextLabel
+	var question = Qna.questions_and_answers[currentQuestion]["pergunta"]
+
+
+	$Panel/RichTextLabel.bbcode_text = question
+	$BotaoTrue.modulate = Color(1, 1, 1)
+	$BotaoFalse.modulate = Color(1, 1, 1)
+
+#Inicia o jogo e controla o turno
+func _start_game():
+
+	currentTurn = player1
+	
+	turnLabel.text = "Vez do Jogador 1"
+
+	intro_Question()
+	
+	startButton.hide()
+	
+	$BotaoTrue.show()
+	$BotaoFalse.show()
+	$Panel.show()
+	$TurnLabel.show()
+	
+func end_Game():
+	# Encerra o jogo
+	queue_free()

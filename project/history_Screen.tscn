@@ -1,0 +1,263 @@
+[gd_scene load_steps=10 format=3 uid="uid://bdhdpo4ieinij"]
+
+[ext_resource type="Texture2D" uid="uid://bqabeg0v8w3jr" path="res://Scenarios/city.png" id="1_xhx12"]
+[ext_resource type="AudioStream" uid="uid://bhdlgdtb8var5" path="res://sounds/character sounds/javanguarda/javanguarda-theme.mp3" id="2_fs2sv"]
+[ext_resource type="FontFile" uid="uid://exfl5lw5mv2u" path="res://Fonts/EquipmentPro.otf" id="2_qi7ke"]
+[ext_resource type="AudioStream" uid="uid://djfld7nyeyq2y" path="res://sounds/Button Sounds.mp3" id="3_acomj"]
+
+[sub_resource type="GDScript" id="GDScript_f11a6"]
+script/source = "extends Control # herda da classe Control
+
+@onready var button_sound = $\"Button Sound\"
+
+
+
+enum MenuState { NULL, INTRO, MENU, SELECT } # define um enum com os estados possíveis do menu
+
+var menu_state = MenuState.INTRO # cria uma variável para armazenar o estado atual do menu
+
+func _process(delta: float) -> void: # define uma função que é chamada a cada quadro
+	if Input.is_action_just_pressed(\"ui_accept\"): # verifica se o usuário pressionou a tecla (espaço por padrão)
+		button_sound.play()
+
+		match menu_state: # compara o valor da variável menu_state com os casos abaixo
+			MenuState.INTRO: # se o menu_state for INTRO
+				_open_menu() # chama a função _open_menu
+				
+			MenuState.MENU: # se o menu_state for MENU
+				
+				get_tree().change_scene_to_file(\"res://question_combat.tscn\")
+				button_sound.play()
+
+func _open_menu() -> void: # define uma função que abre o menu
+	menu_state = MenuState.MENU # muda o valor da variável menu_state para MENU
+	get_node(\"Intro\").visible = false # esconde o nó Intro
+	get_node(\"Menu\").visible = true # mostra o nó Menu
+	get_node(\"AnimationPlayer\").play(\"piscapisca\") # reproduz a animação chamada menu no nó AnimationPlayer
+"
+
+[sub_resource type="Animation" id="Animation_xcfsp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Intro:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10, 385)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Intro:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(624, 1333)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ColorRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-16.4286, -4)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Menu/Precione espaçoo:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ki30t"]
+resource_name = "introdução"
+length = 70.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Intro:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 60.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(13, 63), Vector2(13, -1073)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Intro:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 62.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(600, 1364), Vector2(600, 1364)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ColorRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 63.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-16.4286, -4), Vector2(-571, -4)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(64.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_open_menu"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_jmkwf"]
+resource_name = "piscapisca"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Menu/Precione espaçoo:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.302059),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ulvb"]
+_data = {
+"RESET": SubResource("Animation_xcfsp"),
+"introdução": SubResource("Animation_ki30t"),
+"piscapisca": SubResource("Animation_jmkwf")
+}
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_f11a6")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.4286
+offset_top = -4.0
+offset_right = 1607.57
+offset_bottom = 696.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_xhx12")
+expand_mode = 3
+stretch_mode = 1
+
+[node name="Intro" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = 385.0
+offset_right = 614.0
+offset_bottom = 1718.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_qi7ke")
+theme_override_font_sizes/font_size = 20
+text = "O Conflito Épico
+
+Javanguarda e Erik, o 
+Mestre das Tags, representam duas escolas de pensamento diferentes no mundo da programação. Enquanto Javanguarda é um defensor ardente da linguagem Java e suas características orientadas a objetos, Erik é um especialista em PHP e é conhecido por sua destreza em manipular código e tags de maneira eficiente.
+
+O conflito entre eles começou quando ambos foram convocados para uma conferência de tecnologia de renome mundial. Durante um painel de discussão, Javanguarda argumentou apaixonadamente a favor da segurança, robustez e escalabilidade da linguagem Java, enquanto Erik defendeu a agilidade e a simplicidade do PHP.
+
+As palavras se transformaram em um desafio e, desde então, Javanguarda e Erik se enfrentam em duelos cibernéticos, cada um representando sua linguagem de programação preferida. Suas batalhas acontecem no mundo virtual, onde os códigos se tornam armas e os sistemas são os campos de batalha.
+
+Javanguarda usa a força de Java para criar sistemas sólidos e seguros, enquanto Erik, o Mestre das Tags, utiliza sua habilidade em PHP para encontrar maneiras criativas de contornar as defesas de seu adversário.
+
+Embora sejam rivais implacáveis, tanto Javanguarda quanto Erik têm um profundo respeito um pelo outro. Eles reconhecem a importância de ambas as linguagens de programação no mundo da tecnologia e, embora continuem a competir, também aprendem um com o outro.
+
+Nessa rivalidade, a comunidade de desenvolvedores de todo o mundo assiste a cada confronto, ansiosa para ver quem sairá vitorioso na próxima batalha entre \"Javanguarda\" e \"Erik, o Mestre das Tags\". Esta rivalidade épica continua a inspirar a inovação e a excelência no mundo da programação."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 139
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AudioStreamPlayer")
+autoplay = "introdução"
+libraries = {
+"": SubResource("AnimationLibrary_8ulvb")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fs2sv")
+volume_db = -14.374
+autoplay = true
+
+[node name="Menu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Precione espaçoo" type="Label" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_qi7ke")
+text = "Pressione <Espaço> para continuar 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_acomj")

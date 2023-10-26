@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ckbfp2xn5tt5h"
+path="res://.godot/imported/shield-hit-sound.mp3-5a8af2883b393f5d6cf1c7eb910347b3.mp3str"
+
+[deps]
+
+source_file="res://sounds/character sounds/javanguarda/shield-hit-sound.mp3"
+dest_files=["res://.godot/imported/shield-hit-sound.mp3-5a8af2883b393f5d6cf1c7eb910347b3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

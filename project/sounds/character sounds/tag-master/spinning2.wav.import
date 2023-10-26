@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://6vy1bu3i1q44"
+path="res://.godot/imported/spinning2.wav-5090ebd221b2bf7a7e2b8867ccb51cd7.sample"
+
+[deps]
+
+source_file="res://sounds/character sounds/tag-master/spinning2.wav"
+dest_files=["res://.godot/imported/spinning2.wav-5090ebd221b2bf7a7e2b8867ccb51cd7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,674 @@
+[gd_scene load_steps=53 format=3 uid="uid://b6eajintpogjr"]
+
+[ext_resource type="Script" path="res://3 - Guestion battle.gd" id="1_a4v28"]
+[ext_resource type="Texture2D" uid="uid://m5xjnqqt7jee" path="res://Scenarios/senaidevs_sala_01.jpeg" id="2_subg4"]
+[ext_resource type="Texture2D" uid="uid://cgh4lshcjskj8" path="res://Sprites/JavaATK1.svg" id="3_hy2aa"]
+[ext_resource type="Texture2D" uid="uid://yp6vltglqfm8" path="res://Sprites/JavaIDLE.svg" id="3_idrc4"]
+[ext_resource type="Theme" uid="uid://bmnprws3xmmvs" path="res://Theme/Theme bar.tres" id="4_yd12t"]
+[ext_resource type="Texture2D" uid="uid://dxvpisl5ah4wc" path="res://Sprites/PhpIDLE.svg" id="5_6fmna"]
+[ext_resource type="Texture2D" uid="uid://dqmme2ckohbls" path="res://Sprites/JavaMOV.svg" id="5_g2xgl"]
+[ext_resource type="Texture2D" uid="uid://bfavp6h6dau3g" path="res://Sprites/PhpATAK1.svg" id="6_ll1kg"]
+[ext_resource type="Texture2D" uid="uid://f5fip35cv0mk" path="res://icon.svg" id="8_800jw"]
+[ext_resource type="Texture2D" uid="uid://bcs1cflx0s0a4" path="res://Sprites/PhpMOV.svg" id="8_mfva6"]
+[ext_resource type="FontFile" uid="uid://dstkquanvseit" path="res://Fonts/EquipmentPro.woff" id="9_vfw1a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t53rp"]
+bg_color = Color(0, 0, 0, 0.580392)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iay3q"]
+atlas = ExtResource("3_hy2aa")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gv0n3"]
+atlas = ExtResource("3_hy2aa")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxk3p"]
+atlas = ExtResource("3_hy2aa")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a47e3"]
+atlas = ExtResource("3_hy2aa")
+region = Rect2(102, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojpnr"]
+atlas = ExtResource("3_hy2aa")
+region = Rect2(136, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27nju"]
+atlas = ExtResource("3_hy2aa")
+region = Rect2(170, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w725s"]
+atlas = ExtResource("3_hy2aa")
+region = Rect2(204, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok0ri"]
+atlas = ExtResource("3_idrc4")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq1tv"]
+atlas = ExtResource("3_idrc4")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du41j"]
+atlas = ExtResource("5_g2xgl")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2h2u4"]
+atlas = ExtResource("5_g2xgl")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cve5b"]
+atlas = ExtResource("5_g2xgl")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hfq3j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iay3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gv0n3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxk3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a47e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojpnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27nju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w725s")
+}],
+"loop": false,
+"name": &"Atk1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ok0ri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pq1tv")
+}],
+"loop": true,
+"name": &"Javaguarda",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du41j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2h2u4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cve5b")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_ryye1"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_mkidh"]
+resource_name = "moonwalk"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(420, 286), Vector2(134, 286)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"Walk", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_nq8v1"]
+resource_name = "take damage"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Color(30, 30, 30, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b7q86"]
+resource_name = "walk"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(134, 286), Vector2(420, 286)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"Walk", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bgrd7"]
+_data = {
+"RESET": SubResource("Animation_ryye1"),
+"moonwalk": SubResource("Animation_mkidh"),
+"take damage": SubResource("Animation_nq8v1"),
+"walk": SubResource("Animation_b7q86")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asmec"]
+atlas = ExtResource("6_ll1kg")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfjsr"]
+atlas = ExtResource("6_ll1kg")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p01t"]
+atlas = ExtResource("6_ll1kg")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sorkl"]
+atlas = ExtResource("6_ll1kg")
+region = Rect2(102, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wb8o"]
+atlas = ExtResource("6_ll1kg")
+region = Rect2(136, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lamhs"]
+atlas = ExtResource("5_6fmna")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg3mk"]
+atlas = ExtResource("5_6fmna")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wnvr"]
+atlas = ExtResource("8_mfva6")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hl1e"]
+atlas = ExtResource("8_mfva6")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w320d"]
+atlas = ExtResource("8_mfva6")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7qt5"]
+atlas = ExtResource("8_mfva6")
+region = Rect2(102, 0, 34, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f0h25"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asmec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfjsr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p01t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sorkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wb8o")
+}],
+"loop": false,
+"name": &"Atk1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lamhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg3mk")
+}],
+"loop": true,
+"name": &"Php",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wnvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hl1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w320d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7qt5")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_yjoc2"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_gajbw"]
+resource_name = "moonwalk"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(230, 288), Vector2(531, 288)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"Walk", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_edp75"]
+resource_name = "take damage"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Color(30, 30, 30, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0g0mj"]
+resource_name = "walk"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(531, 288), Vector2(230, 288)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"Walk", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ekevw"]
+_data = {
+"RESET": SubResource("Animation_yjoc2"),
+"moonwalk": SubResource("Animation_gajbw"),
+"take damage": SubResource("Animation_edp75"),
+"walk": SubResource("Animation_0g0mj")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_av0l0"]
+bg_color = Color(0.584314, 0.360784, 0.662745, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h818y"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_som78"]
+bg_color = Color(0, 0.521569, 0.603922, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkh62"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_1on3w"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 17
+Label/styles/normal = SubResource("StyleBoxFlat_fkh62")
+
+[node name="jogo" type="Node2D"]
+script = ExtResource("1_a4v28")
+metadata/_edit_horizontal_guides_ = [337.0, 216.0]
+metadata/_edit_vertical_guides_ = [242.0]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -7.0
+offset_top = -1.0
+offset_right = 635.0
+offset_bottom = 385.0
+texture = ExtResource("2_subg4")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 47.0
+offset_top = 117.0
+offset_right = 591.0
+offset_bottom = 182.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_t53rp")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 8.0
+offset_right = -7.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BotaoTrue" type="Button" parent="."]
+offset_left = 216.0
+offset_top = 185.0
+offset_right = 310.0
+offset_bottom = 216.0
+action_mode = 0
+text = "Verdadeira"
+
+[node name="BotaoFalse" type="Button" parent="."]
+offset_left = 349.0
+offset_top = 185.0
+offset_right = 443.0
+offset_bottom = 216.0
+text = "Falsa"
+
+[node name="Javanguarda" type="AnimatedSprite2D" parent="."]
+top_level = true
+texture_filter = 1
+position = Vector2(134, 286)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_hfq3j")
+animation = &"Javaguarda"
+autoplay = "Javaguarda"
+frame_progress = 0.353841
+
+[node name="Animation Javanguard" type="AnimationPlayer" parent="Javanguarda"]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_bgrd7")
+}
+
+[node name="MestredasTags" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(531, 288)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_f0h25")
+animation = &"Php"
+autoplay = "Php"
+frame_progress = 0.607444
+flip_h = true
+
+[node name="Animation php" type="AnimationPlayer" parent="MestredasTags"]
+libraries = {
+"": SubResource("AnimationLibrary_ekevw")
+}
+
+[node name="Inforboxplayer1" type="Panel" parent="."]
+offset_left = 6.0
+offset_top = 14.0
+offset_right = 306.0
+offset_bottom = 84.0
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_av0l0")
+
+[node name="Panel" type="Panel" parent="Inforboxplayer1"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 70.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h818y")
+
+[node name="TextureRect" type="TextureRect" parent="Inforboxplayer1/Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 56.0
+offset_bottom = 56.0
+texture = ExtResource("8_800jw")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Inforboxplayer1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.31
+anchor_top = 0.187
+anchor_right = 0.866
+anchor_bottom = 0.408
+offset_left = 64.0
+offset_top = -6.09
+offset_right = -62.8
+offset_bottom = 1.44
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_vfw1a")
+theme_override_font_sizes/font_size = 30
+text = "Javanguarda"
+
+[node name="Player1HPBar" type="ProgressBar" parent="Inforboxplayer1"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.273333
+anchor_top = 0.485714
+anchor_right = 0.976333
+anchor_bottom = 0.542857
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 0.0999603
+offset_bottom = 23.0
+theme = ExtResource("4_yd12t")
+max_value = 10.0
+step = 1.0
+value = 10.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Inforboxplayer2" type="Panel" parent="."]
+offset_left = 317.0
+offset_top = 14.0
+offset_right = 617.0
+offset_bottom = 84.0
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_som78")
+
+[node name="Panel" type="Panel" parent="Inforboxplayer2"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 4.0
+offset_right = 292.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h818y")
+
+[node name="TextureRect" type="TextureRect" parent="Inforboxplayer2/Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 56.0
+offset_bottom = 56.0
+texture = ExtResource("8_800jw")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Inforboxplayer2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.31
+anchor_top = 0.187
+anchor_right = 0.866
+anchor_bottom = 0.408
+offset_left = -59.5
+offset_top = -11.59
+offset_right = -67.3
+offset_bottom = 6.94
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_vfw1a")
+theme_override_font_sizes/font_size = 30
+text = "MestredasTags"
+
+[node name="Player2HPBar" type="ProgressBar" parent="Inforboxplayer2"]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -33.0
+offset_right = 136.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_yd12t")
+max_value = 10.0
+step = 1.0
+value = 10.0
+
+[node name="TurnLabel" type="Label" parent="."]
+offset_left = 226.0
+offset_top = 83.0
+offset_right = 390.0
+offset_bottom = 123.0
+theme = SubResource("Theme_1on3w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 230.0
+offset_top = 222.0
+offset_right = 434.0
+offset_bottom = 294.0
+text = "começar"

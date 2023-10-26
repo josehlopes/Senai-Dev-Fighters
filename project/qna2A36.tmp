@@ -1,0 +1,125 @@
+extends Node
+
+# Dicionário de perguntas e respostas corretas
+var questions_and_answers = {
+	"pergunta_1": {
+		"pergunta": "Encapsulamento em Java é importante na Programação Orientada a Objetos.",
+		"resposta_correta": "verdadeira"
+},
+	"pergunta_2": {
+		"pergunta": "Herança em Java é um conceito de reutilização de código.",
+		"resposta_correta": "verdadeira"
+},
+	"pergunta_3": {
+		"pergunta": "Uma classe abstrata e uma interface em Java têm diferenças em relação à implementação de métodos.",
+		"resposta_correta": "verdadeira"
+},
+	"pergunta_4": {
+		"pergunta": "Construtores em Java têm o propósito de inicializar objetos.",
+		"resposta_correta": "verdadeira"
+},
+	"pergunta_5": {
+		"pergunta": "Polimorfismo é aplicado em Java para permitir que objetos de diferentes classes sejam tratados de maneira uniforme.",
+		"resposta_correta": "verdadeira"
+},
+	"pergunta_6": {
+		"pergunta": "Classes Wrapper (Integer, Float, Double...) em Java são usadas para representar tipos primitivos como objetos.",
+		"resposta_correta": "verdadeira"
+},
+	"pergunta_7": {
+		"pergunta": "Exceções em Java são usadas para lidar com erros e situações excepcionais.",
+		"resposta_correta": "verdadeira"
+},
+	"pergunta_8": {
+		"pergunta": "Objetos não são instâncias de classes em Java.",
+		"resposta_correta": "falsa"
+},
+	"pergunta_9": {
+		"pergunta": "Classes internas (inner classes) em Java não tem muita utilidade pois não são usadas em muitos cenários, pois não oferecem benefícios em relação a classes normais.",
+		"resposta_correta": "falsa"
+},
+	"pergunta_10": {
+		"pergunta": "Um método estático (static method) em Java está estritamente associado a uma instância específica da classe e não pode ser chamado diretamente pela classe em si.",
+		"resposta_correta": "falsa"
+},
+	"pergunta_11": {
+		"pergunta": "Scrum é uma metodologia ágil e difere de outras abordagens ágeis, como o Kanban, em vários aspectos.",
+		"resposta_correta": "verdadeira"
+},
+	"pergunta_12": {
+		"pergunta": "O Manifesto Ágil tem valores, e é possível explicar cada um deles.",
+		"resposta_correta": "verdadeira"
+},
+	"pergunta_13": {
+		"pergunta": "Uma sprint em Scrum tem um propósito definido.",
+		"resposta_correta": "verdadeira"
+},
+	"pergunta_14": {
+		"pergunta": "O Scrum Master facilita o processo em um time Scrum e desempenha um papel específico.",
+		"resposta_correta": "verdadeira"
+},
+	"pergunta_15": {
+		"pergunta": "A revisão de sprint em Scrum não tem um objetivo claro.",
+		"resposta_correta": "falsa"
+},
+	"pergunta_16": {
+		"pergunta": "Na reunião de planejamento da sprint em Scrum, ocorre um processo essencial em que a equipe Scrum colaborativamente estabelece os objetivos e o escopo da próxima sprint.",
+		"resposta_correta": "verdadeira"
+},
+	"pergunta_17": {
+		"pergunta": "Lean Thinking não está relacionado às práticas ágeis.",
+		"resposta_correta": "falsa"
+},
+	"pergunta_18": {
+		"pergunta": "O DoD (Definition of Done) em Scrum não tem uma importância definida.",
+		"resposta_correta": "falsa"
+},
+	"pergunta_19": {
+		"pergunta": "Continuous Integration se encaixa nas metodologias ágeis.",
+		"resposta_correta": "verdadeira"
+},
+	"pergunta_20": {
+		"pergunta": "A retrospectiva de sprint em Scrum tem uma finalidade específica.",
+		"resposta_correta": "verdadeira"
+},
+	"pergunta_21": {
+		"pergunta": "Em Java, a herança múltipla é permitida para evitar duplicação de código.",
+		"resposta_correta": "falsa"
+},
+	"pergunta_22": {
+		"pergunta": "Em Scrum, os membros da equipe de desenvolvimento não têm influência sobre as estimativas de esforço das histórias de usuário.",
+		"resposta_correta": "falsa"
+},
+	"pergunta_23": {
+		"pergunta": "Em Java, todas as variáveis não são declaradas com um tipo específico.",
+		"resposta_correta": "falsa"
+},
+	"pergunta_24": {
+		"pergunta": "Em Scrum, o Product Owner não desempenha um papel ativo na priorização do backlog do produto.",
+		"resposta_correta": "falsa"
+},
+	"pergunta_25": {
+		"pergunta": "Em Java, métodos abstratos podem ter implementações padrão.",
+		"resposta_correta": "falsa"
+},
+	"pergunta_26": {
+		"pergunta": "No Manifesto Ágil, a ênfase é colocada na documentação detalhada e abrangente.",
+		"resposta_correta": "falsa"
+},
+	"pergunta_27": {
+		"pergunta": "Em Scrum, a retrospectiva de sprint ocorre antes da revisão de sprint.",
+		"resposta_correta": "falsa"
+},
+	"pergunta_28": {
+		"pergunta": "Em Java, métodos finais podem ser sobrescritos por subclasses.",
+		"resposta_correta": "falsa"
+},
+	"pergunta_29": {
+		"pergunta": "Em Scrum, o Scrum Master é responsável pela definição do backlog do produto.",
+		"resposta_correta": "falsa"
+},
+	"pergunta_30": {
+		"pergunta": "Em Java, a palavra-chave 'const' é usada para criar constantes.",
+		"resposta_correta": "falsa"
+}
+}

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://df62gvenodjm2"
+path="res://.godot/imported/magic.mp3-69d906ff011c5bd1c911c0ece760885d.mp3str"
+
+[deps]
+
+source_file="res://sounds/character sounds/tag-master/magic.mp3"
+dest_files=["res://.godot/imported/magic.mp3-69d906ff011c5bd1c911c0ece760885d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

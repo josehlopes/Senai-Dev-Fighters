@@ -1,0 +1,44 @@
+#-----------------------------------------Menu do jogo---------------------------------------#
+
+extends Control
+
+# Definir elementos da interface gráfica
+@onready var main_menu = $"Main menu"
+@onready var controls_menu = $"Controls Menu"
+@onready var credits_menu = $"Credits Menu"
+
+# Iniciar o jogo quando o botão "Iniciar Jogo" é pressionado
+func _on_start_game_pressed():
+	get_tree().change_scene_to_file("res://2 - History screen.three.tscn")
+	main_menu.visible = false
+	controls_menu.visible = false
+	credits_menu.visible = false
+
+# Alternar para o menu de controles e ocultar outros menus quando o botão "Controles" é pressionado
+func _on_controls_button_pressed():
+	main_menu.visible = false
+	controls_menu.visible = true
+	credits_menu.visible = false
+
+# Alternar para o menu de créditos e ocultar outros menus quando o botão "Créditos" é pressionado
+func _on_credits_button_pressed():
+	main_menu.visible = false
+	controls_menu.visible = false
+	credits_menu.visible = true
+
+# Sair do jogo quando o botão "Sair" é pressionado
+func _on_exit_button_pressed():
+	get_tree().quit()
+
+# Voltar ao menu principal a partir do menu de controles
+func _on_back_button_credits_pressed():
+	
+	main_menu.visible = true
+	controls_menu.visible = false
+	credits_menu.visible = false
+
+func _on_back_button_controls_pressed():
+	main_menu.visible = true
+	controls_menu.visible = false
+	credits_menu.visible = false
+	

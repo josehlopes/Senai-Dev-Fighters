@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://camux60r5i4yc"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.521569, 0.521569, 0.521569, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 112.0
+offset_right = 448.0
+offset_bottom = 248.0
+text = "O vencedor é : 
+
+
+A COMPUTAÇÃO"

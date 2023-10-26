@@ -1,0 +1,255 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu4w6mbbis4kt"]
+
+[ext_resource type="Script" path="res://1 - Menu screen.gd" id="1_wmswh"]
+[ext_resource type="Texture2D" uid="uid://bd0v17mkf1l0e" path="res://Scenarios/_daee6bd2-f331-46ce-a712-a1b7b0dc0cc0.jpg" id="2_xgby8"]
+[ext_resource type="AudioStream" uid="uid://du47tex603www" path="res://sounds/musica de menu.mp3" id="3_w4hl2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axse4"]
+bg_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wmswh")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -255.0
+offset_right = 1019.0
+offset_bottom = 769.0
+scale = Vector2(0.62, 0.62)
+texture = ExtResource("2_xgby8")
+
+[node name="Main menu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Main menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Main menu/CenterContainer"]
+custom_minimum_size = Vector2(350, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_axse4")
+
+[node name="MarginContainer" type="MarginContainer" parent="Main menu/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main menu/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="start game" type="Button" parent="Main menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "iniciar jogo"
+
+[node name="controls button" type="Button" parent="Main menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Controles"
+
+[node name="credits button" type="Button" parent="Main menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Creditos"
+
+[node name="exit button" type="Button" parent="Main menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sair"
+
+[node name="Controls Menu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Controls Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Controls Menu/CenterContainer"]
+custom_minimum_size = Vector2(350, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_axse4")
+
+[node name="MarginContainer" type="MarginContainer" parent="Controls Menu/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Controls Menu/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="Controls Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Controles
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Controls Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tecla 'UP'"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Controls Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tecla 'LEFT'
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Controls Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tecla 'RIGHT'"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Controls Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tecla 'DOWN	'
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Controls Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tecla 'ESPAÇO'
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Controls Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mause
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back button controls" type="Button" parent="Controls Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Voltar
+"
+
+[node name="Credits Menu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Credits Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Credits Menu/CenterContainer"]
+custom_minimum_size = Vector2(350, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_axse4")
+
+[node name="MarginContainer" type="MarginContainer" parent="Credits Menu/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits Menu/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="Credits Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Adriel	
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Credits Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Elisson"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Credits Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Thiago
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Credits Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "jose
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Credits Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "samuel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Credits Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "jemima"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Credits Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mause
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back button credits" type="Button" parent="Credits Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Voltar
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_w4hl2")
+volume_db = -12.46
+autoplay = true
+
+[connection signal="pressed" from="Main menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/start game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Main menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/controls button" to="." method="_on_controls_button_pressed"]
+[connection signal="pressed" from="Main menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/credits button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Main menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/exit button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Controls Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/back button controls" to="." method="_on_back_button_controls_pressed"]
+[connection signal="pressed" from="Credits Menu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/back button credits" to="." method="_on_back_button_credits_pressed"]

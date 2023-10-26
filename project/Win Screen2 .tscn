@@ -1,0 +1,356 @@
+[gd_scene load_steps=41 format=3 uid="uid://wh2bhetbjdmw"]
+
+[ext_resource type="FontFile" uid="uid://exfl5lw5mv2u" path="res://Fonts/EquipmentPro.otf" id="2_k4ocl"]
+[ext_resource type="Script" path="res://Win Screen2.gd" id="3_8mvtl"]
+[ext_resource type="StyleBox" uid="uid://btft00mfd4rn0" path="res://Theme/stlyle do botão.tres" id="3_dsto0"]
+[ext_resource type="Theme" uid="uid://32oua5f0mmjn" path="res://Theme/menu_screen.tres" id="4_gkpsm"]
+[ext_resource type="Texture2D" uid="uid://b8erma13l5cte" path="res://Scenarios/Png.png" id="5_dl6ky"]
+[ext_resource type="Texture2D" uid="uid://i30pwg5ic42l" path="res://Scenarios/Podio (1).png" id="6_tltb6"]
+[ext_resource type="Texture2D" uid="uid://bfavp6h6dau3g" path="res://Sprites/PhpATAK1.svg" id="7_p5ggo"]
+[ext_resource type="Texture2D" uid="uid://dy2cimmexvyhg" path="res://Sprites/PhpATAK2.svg" id="8_odsmn"]
+[ext_resource type="Texture2D" uid="uid://dxvpisl5ah4wc" path="res://Sprites/PhpIDLE.svg" id="9_vonp1"]
+[ext_resource type="Texture2D" uid="uid://dh1xse8yukmyb" path="res://Sprites/PhpSMOKE.svg" id="10_trqt4"]
+[ext_resource type="Texture2D" uid="uid://c0bodlxxc0m8x" path="res://Sprites/PhpULT.svg" id="11_k6ame"]
+[ext_resource type="Texture2D" uid="uid://bcs1cflx0s0a4" path="res://Sprites/PhpMOV.svg" id="12_rhxlb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7hp3"]
+bg_color = Color(0.878431, 0.980392, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbkxn"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 9
+shadow_color = Color(0.764706, 0, 0, 0.6)
+
+[sub_resource type="Theme" id="Theme_golfa"]
+default_font = ExtResource("2_k4ocl")
+default_font_size = 25
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/constants/h_separation = 3
+Button/font_sizes/font_size = 25
+Button/fonts/font = ExtResource("2_k4ocl")
+Button/styles/focus = SubResource("StyleBoxFlat_e7hp3")
+Button/styles/hover = ExtResource("3_dsto0")
+Button/styles/normal = SubResource("StyleBoxFlat_bbkxn")
+Button/styles/pressed = ExtResource("3_dsto0")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asmec"]
+atlas = ExtResource("7_p5ggo")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfjsr"]
+atlas = ExtResource("7_p5ggo")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p01t"]
+atlas = ExtResource("7_p5ggo")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sorkl"]
+atlas = ExtResource("7_p5ggo")
+region = Rect2(102, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wb8o"]
+atlas = ExtResource("7_p5ggo")
+region = Rect2(136, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atkgs"]
+atlas = ExtResource("8_odsmn")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sxgh"]
+atlas = ExtResource("8_odsmn")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fll0x"]
+atlas = ExtResource("8_odsmn")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tjhq"]
+atlas = ExtResource("8_odsmn")
+region = Rect2(102, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_801n6"]
+atlas = ExtResource("9_vonp1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpds8"]
+atlas = ExtResource("9_vonp1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lamhs"]
+atlas = ExtResource("9_vonp1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg3mk"]
+atlas = ExtResource("9_vonp1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bte44"]
+atlas = ExtResource("10_trqt4")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5ktv"]
+atlas = ExtResource("10_trqt4")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyydu"]
+atlas = ExtResource("11_k6ame")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyg88"]
+atlas = ExtResource("11_k6ame")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtu41"]
+atlas = ExtResource("11_k6ame")
+region = Rect2(102, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us88g"]
+atlas = ExtResource("11_k6ame")
+region = Rect2(136, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whchs"]
+atlas = ExtResource("11_k6ame")
+region = Rect2(170, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wnvr"]
+atlas = ExtResource("12_rhxlb")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hl1e"]
+atlas = ExtResource("12_rhxlb")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w320d"]
+atlas = ExtResource("12_rhxlb")
+region = Rect2(68, 0, 34, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7qt5"]
+atlas = ExtResource("12_rhxlb")
+region = Rect2(102, 0, 34, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2d8r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asmec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfjsr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p01t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sorkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wb8o")
+}],
+"loop": false,
+"name": &"Atk1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atkgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sxgh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fll0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tjhq")
+}],
+"loop": true,
+"name": &"Atk2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_801n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpds8")
+}],
+"loop": true,
+"name": &"Defense",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lamhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg3mk")
+}],
+"loop": true,
+"name": &"Php",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bte44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5ktv")
+}],
+"loop": false,
+"name": &"Smoke",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyydu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyg88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyydu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtu41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us88g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whchs")
+}],
+"loop": true,
+"name": &"Ultimate",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wnvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hl1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w320d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7qt5")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_right = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0.658824, 1, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 43.0
+offset_right = 630.0
+offset_bottom = 119.0
+
+[node name="restart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 250.0
+offset_right = 577.0
+offset_bottom = 281.0
+theme = SubResource("Theme_golfa")
+text = "Reset"
+script = ExtResource("3_8mvtl")
+
+[node name="restart2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 244.0
+offset_right = 167.0
+offset_bottom = 275.0
+theme = ExtResource("4_gkpsm")
+text = "Menu"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(303, 37)
+scale = Vector2(0.637097, 0.637097)
+texture = ExtResource("5_dl6ky")
+
+[node name="Podio(1)" type="Sprite2D" parent="."]
+position = Vector2(303, 315)
+scale = Vector2(0.346341, 0.302439)
+texture = ExtResource("6_tltb6")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 127.0
+offset_right = 628.0
+offset_bottom = 156.0
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 129.0
+offset_right = 409.0
+offset_bottom = 155.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MestredasTags" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(332, 206)
+scale = Vector2(4.17647, 4.17647)
+sprite_frames = SubResource("SpriteFrames_g2d8r")
+animation = &"Atk1"
+autoplay = "Php"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 203.0
+offset_top = 45.0
+offset_right = 423.0
+offset_bottom = 117.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "You  WIN"
+horizontal_alignment = 1
+vertical_alignment = 1
