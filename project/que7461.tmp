@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://qtjyn17v3thy" path="res://Scenarios/Versao_Final.png" id="2_u7kkx"]
 [ext_resource type="FontFile" uid="uid://ct1e7cvluprna" path="res://Fonts/EquipmentPro.ttf" id="3_0ivsr"]
 [ext_resource type="Texture2D" uid="uid://cgh4lshcjskj8" path="res://Sprites/JavaATK1.svg" id="3_hy2aa"]
-[ext_resource type="Theme" uid="uid://b3snr31h3yxxn" path="res://botaoVandF.tres" id="3_i1qwd"]
 [ext_resource type="Texture2D" uid="uid://yp6vltglqfm8" path="res://Sprites/JavaIDLE.svg" id="3_idrc4"]
+[ext_resource type="Theme" uid="uid://b3snr31h3yxxn" path="res://botão de verdadeiro e falso.tres" id="3_v5uir"]
 [ext_resource type="Theme" uid="uid://w3caohwt0c12" path="res://botão da batalha.tres" id="4_nf5qw"]
 [ext_resource type="Theme" uid="uid://bmnprws3xmmvs" path="res://Theme/Theme bar.tres" id="4_yd12t"]
 [ext_resource type="Texture2D" uid="uid://dxvpisl5ah4wc" path="res://Sprites/PhpIDLE.svg" id="5_6fmna"]
@@ -50,16 +50,12 @@ Label/font_sizes/font_size = 20
 Label/styles/normal = SubResource("StyleBoxFlat_fkh62")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t53rp"]
-bg_color = Color(0.101961, 0, 0.0313726, 0.803922)
+bg_color = Color(0.247059, 0.247059, 0.45098, 0.67451)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+border_color = Color(0.8, 0.54902, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iay3q"]
 atlas = ExtResource("3_hy2aa")
@@ -1417,7 +1413,7 @@ offset_left = 160.0
 offset_top = 209.0
 offset_right = 310.0
 offset_bottom = 244.0
-theme = ExtResource("3_i1qwd")
+theme = ExtResource("3_v5uir")
 action_mode = 0
 text = "Verdadeira"
 
@@ -1426,15 +1422,15 @@ offset_left = 343.0
 offset_top = 209.0
 offset_right = 493.0
 offset_bottom = 244.0
-theme = ExtResource("3_i1qwd")
+theme = ExtResource("3_v5uir")
 text = "Falsa"
 
 [node name="TurnLabel" type="Label" parent="."]
 self_modulate = Color(1, 1, 1, 0.803922)
-offset_left = 231.0
-offset_top = 88.0
-offset_right = 395.0
-offset_bottom = 128.0
+offset_left = 238.0
+offset_top = 96.0
+offset_right = 402.0
+offset_bottom = 136.0
 theme = SubResource("Theme_1on3w")
 theme_override_fonts/font = ExtResource("3_0ivsr")
 horizontal_alignment = 1
@@ -1452,9 +1448,9 @@ text = "Começar"
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 54.0
-offset_top = 138.0
+offset_top = 142.0
 offset_right = 598.0
-offset_bottom = 203.0
+offset_bottom = 207.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_t53rp")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]

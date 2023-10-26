@@ -1,17 +1,3 @@
-[gd_resource type="StyleBoxFlat" format=3 uid="uid://bdt3frnfuuo66"]
-
-[resource]
-bg_color = Color(0, 0.835294, 0.847059, 0.278431)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-shadow_color = Color(1, 1, 1, 0.6)
-shadow_size = 4
-shadow_offset = Vector2(0, 5)
+version https://git-lfs.github.com/spec/v1
+oid sha256:b22a27953799473ef97109ea79f42e1f66588d958409f7ca64b66644773776d1
+size 475

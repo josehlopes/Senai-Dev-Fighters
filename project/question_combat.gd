@@ -1,6 +1,7 @@
 extends Node2D
 
 # Variáveis para rastrear a saúde dos jogadores
+
 var player1Hp = 10
 var player2Hp = 10
 
