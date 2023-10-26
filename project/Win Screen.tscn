@@ -1,58 +1,16 @@
-[gd_scene load_steps=43 format=3 uid="uid://camux60r5i4yc"]
+[gd_scene load_steps=39 format=3 uid="uid://camux60r5i4yc"]
 
 [ext_resource type="Script" path="res://Win Screen.gd" id="1_ciaib"]
 [ext_resource type="Texture2D" uid="uid://d0hu8i0yph4wc" path="res://Sprites/JavaATK2.svg" id="2_6e6bp"]
+[ext_resource type="Theme" uid="uid://b0bovyu2y7wb2" path="res://Theme/reset.tres" id="2_dh4cs"]
 [ext_resource type="Texture2D" uid="uid://cgh4lshcjskj8" path="res://Sprites/JavaATK1.svg" id="3_yfte8"]
 [ext_resource type="Texture2D" uid="uid://cfya86uwetvpr" path="res://Sprites/JavaDEF.svg" id="4_7nsyp"]
 [ext_resource type="Texture2D" uid="uid://yp6vltglqfm8" path="res://Sprites/JavaIDLE.svg" id="5_akp4r"]
 [ext_resource type="Texture2D" uid="uid://ltvsn7ylwyyj" path="res://Sprites/JavaULT.svg" id="6_6swe3"]
 [ext_resource type="Texture2D" uid="uid://dqmme2ckohbls" path="res://Sprites/JavaMOV.svg" id="7_56f6v"]
-[ext_resource type="FontFile" uid="uid://exfl5lw5mv2u" path="res://Fonts/EquipmentPro.otf" id="8_qswcq"]
 [ext_resource type="Texture2D" uid="uid://b8erma13l5cte" path="res://Scenarios/Png.png" id="9_adf8y"]
-[ext_resource type="StyleBox" uid="uid://btft00mfd4rn0" path="res://Theme/stlyle do botão.tres" id="9_nekal"]
-[ext_resource type="Theme" uid="uid://32oua5f0mmjn" path="res://Theme/menu_screen.tres" id="10_668g2"]
+[ext_resource type="AudioStream" uid="uid://bjtwvvbj67880" path="res://sounds/The Champions.mp3" id="11_ekdsc"]
 [ext_resource type="Texture2D" uid="uid://i30pwg5ic42l" path="res://Scenarios/Podio (1).png" id="13_3solk"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7hp3"]
-bg_color = Color(0.878431, 0.980392, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_offset = Vector2(0, 2)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbkxn"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-corner_detail = 9
-shadow_color = Color(0.764706, 0, 0, 0.6)
-
-[sub_resource type="Theme" id="Theme_golfa"]
-default_font = ExtResource("8_qswcq")
-default_font_size = 25
-Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_focus_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0, 0, 0, 1)
-Button/constants/h_separation = 3
-Button/font_sizes/font_size = 25
-Button/fonts/font = ExtResource("8_qswcq")
-Button/styles/focus = SubResource("StyleBoxFlat_e7hp3")
-Button/styles/hover = ExtResource("9_nekal")
-Button/styles/normal = SubResource("StyleBoxFlat_bbkxn")
-Button/styles/pressed = ExtResource("9_nekal")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e8xft"]
 atlas = ExtResource("2_6e6bp")
@@ -307,7 +265,7 @@ offset_left = 456.0
 offset_top = 250.0
 offset_right = 577.0
 offset_bottom = 281.0
-theme = SubResource("Theme_golfa")
+theme = ExtResource("2_dh4cs")
 text = "Reset"
 
 [node name="menu" type="Button" parent="."]
@@ -316,7 +274,7 @@ offset_left = 46.0
 offset_top = 244.0
 offset_right = 167.0
 offset_bottom = 275.0
-theme = ExtResource("10_668g2")
+theme = ExtResource("2_dh4cs")
 text = "Menu"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -366,6 +324,11 @@ scale = Vector2(3.67647, 3.67647)
 sprite_frames = SubResource("SpriteFrames_meimn")
 animation = &"Javaguarda"
 autoplay = "Javaguarda"
+
+[node name="son de fundo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ekdsc")
+volume_db = -17.475
+autoplay = true
 
 [connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]

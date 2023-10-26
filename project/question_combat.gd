@@ -2,7 +2,7 @@ extends Node2D
 
 # Variáveis para rastrear a saúde dos jogadores
 
-var player1Hp = 1
+var player1Hp = 10
 var player2Hp = 10
 
 #Variaveis para animação do player
@@ -161,7 +161,7 @@ func verify_Response(playerResponse):
 				
 				Players.player2.point += 1
 				print("Player 1 perdeu!")
-				get_tree().change_scene_to_file("res://Win Screen2.tscn")
+				get_tree().change_scene_to_file("res://Win Screen2 .tscn")
 				
 			else:
 				
