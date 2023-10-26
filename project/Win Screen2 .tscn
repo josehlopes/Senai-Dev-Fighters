@@ -270,6 +270,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_8mvtl")
 
 [node name="TextureRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -297,7 +298,6 @@ offset_right = 577.0
 offset_bottom = 281.0
 theme = SubResource("Theme_golfa")
 text = "Reset"
-script = ExtResource("3_8mvtl")
 
 [node name="restart2" type="Button" parent="."]
 layout_mode = 0
