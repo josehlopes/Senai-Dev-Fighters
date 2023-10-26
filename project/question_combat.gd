@@ -2,7 +2,7 @@ extends Node2D
 
 # Variáveis para rastrear a saúde dos jogadores
 
-var player1Hp = 1
+var player1Hp = 10
 var player2Hp = 10
 
 #Variaveis para animação do player
@@ -104,6 +104,8 @@ func verify_Response(playerResponse):
 			
 			if player2Hp == 1: #Verificando se é possível finalizar o oponente
 				
+				$BotaoFalse.hide()
+				$BotaoTrue.hide()
 				AnimationPlayerP1.play("ultimate")
 				await get_tree().create_timer(0.7).timeout
 				AnimationPlayerP2.play("take damage")
@@ -112,7 +114,6 @@ func verify_Response(playerResponse):
 				await AnimationPlayerP1.animation_finished
 				AnimatedSpriteP1.play("Javaguarda")
 				Players.player1.point += 1
-				$BotaoFalse.hide()
 				AnimationPlayerP2.play("delete")
 				await AnimationPlayerP2.animation_finished
 				print("Player 2 perdeu!")
@@ -147,6 +148,8 @@ func verify_Response(playerResponse):
 			
 			if player1Hp == 1: #Verificando se é possível finalizar o oponente
 				
+				$BotaoFalse.hide()
+				$BotaoTrue.hide()
 				AnimationPlayerP2.play("ultimate")
 				await get_tree().create_timer(0.2).timeout
 				AnimationPlayerP1.play("take damage")
@@ -161,7 +164,7 @@ func verify_Response(playerResponse):
 				
 				Players.player2.point += 1
 				print("Player 1 perdeu!")
-				get_tree().change_scene_to_file("res://Win Screen2.tscn")
+				get_tree().change_scene_to_file("res://Win Screen2 .tscn")
 				
 			else:
 				

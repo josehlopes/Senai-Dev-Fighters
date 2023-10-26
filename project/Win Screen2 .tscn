@@ -337,10 +337,10 @@ vertical_alignment = 1
 
 [node name="MestredasTags" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(332, 206)
+position = Vector2(305, 206)
 scale = Vector2(4.17647, 4.17647)
 sprite_frames = SubResource("SpriteFrames_g2d8r")
-animation = &"Atk1"
+animation = &"Php"
 autoplay = "Php"
 
 [node name="Label2" type="Label" parent="."]
@@ -354,3 +354,6 @@ theme_override_font_sizes/font_size = 50
 text = "You  WIN"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="restart2" to="." method="_on_menu_pressed"]
