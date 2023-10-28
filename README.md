@@ -22,7 +22,7 @@ Nosso Objetivo é desenvolver um jogo de perguntas e respostas onde o jogador po
 </br>
 
 ##### Resumo:
-Desenvolver um jogo em gdscrip onde cada jogador irá responder 10 perguntas relacionadas a programação, o jogador que acertar as 10 perguntas primeiro será o vencedor.
+Desenvolver um jogo em gdscrip onde cada jogador irá responder perguntas relacionadas a programação, o jogador que reduzir a vida do oponente a 0 acertando as perguntas é o vencedor.
 <br>(Requisito ou foco geral do projeto, a progressão do jogo não deve sair deste contexto)
 
 ##### Referencias:
