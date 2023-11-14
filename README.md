@@ -22,7 +22,7 @@ Nosso Objetivo é desenvolver um jogo de perguntas e respostas onde o jogador po
 </br>
 
 ##### Resumo:
-Desenvolver um jogo em gdscrip onde cada jogador irá responder perguntas relacionadas a programação, o jogador que reduzir a vida do oponente a 0 acertando as perguntas é o vencedor.
+Desenvolver um jogo em gdscrip onde cada jogador irá responder 10 perguntas relacionadas a programação, o jogador que acertar as 10 perguntas primeiro será o vencedor.
 <br>(Requisito ou foco geral do projeto, a progressão do jogo não deve sair deste contexto)
 
 ##### Referencias:
@@ -111,18 +111,16 @@ Descreva qual e o porque desse estilo, ex:
 
 ## Conclusão do projeto
 ##### Créditos:
-Material e ferramentas usadas, membros da equipe, menções a auxilios.
+Equipe de desenvolvimento: Adriel Henrique, José Lopes, Samuel Júnior, Jemima Santos, Elisson Nadson e Thiago Machado.
+Orientador: Erik Marques
+Ferramentas utilizadas: Godot (Versão 4.2)
+Música: 8 Bit Universe (https://www.youtube.com/@8BitUniverse)
+Sons utilizados: https://freesound.org
+Em especial gostaria de citar todo o apoio da comunidade Godot Brasil no discord e todo o apoio do @nokiojyn que aceitou atuar como nosso mentor durante todo o projeto, nos ajudando a entender melhor as formas de trabalhar com a engine.
 
-##### Desvio da idealização inicial:
-Oque foi mudado durante o desenvolvimento em relação ao design e o porque.
 
 ##### Defeitos e mudanças posteriores:
-Complicações e próximos passos depois da finalização, tal como:
-- dlcs
-- versões exclusivas
-- reajuste de publico alvo
-- feedback negativo de elementos
-
+Para o futuro planejamos adicionar mais temas e personagens, tranformando em um projeto web e um app mobile.
 
 
 
