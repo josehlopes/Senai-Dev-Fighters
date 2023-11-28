@@ -1,58 +1,16 @@
-[gd_scene load_steps=41 format=3 uid="uid://wh2bhetbjdmw"]
+[gd_scene load_steps=37 format=3 uid="uid://wh2bhetbjdmw"]
 
-[ext_resource type="FontFile" uid="uid://exfl5lw5mv2u" path="res://Fonts/EquipmentPro.otf" id="2_k4ocl"]
 [ext_resource type="Script" path="res://Win Screen2.gd" id="3_8mvtl"]
-[ext_resource type="StyleBox" uid="uid://btft00mfd4rn0" path="res://Theme/stlyle do botão.tres" id="3_dsto0"]
-[ext_resource type="Theme" uid="uid://32oua5f0mmjn" path="res://Theme/menu_screen.tres" id="4_gkpsm"]
 [ext_resource type="Texture2D" uid="uid://b8erma13l5cte" path="res://Scenarios/Png.png" id="5_dl6ky"]
 [ext_resource type="Texture2D" uid="uid://i30pwg5ic42l" path="res://Scenarios/Podio (1).png" id="6_tltb6"]
 [ext_resource type="Texture2D" uid="uid://bfavp6h6dau3g" path="res://Sprites/PhpATAK1.svg" id="7_p5ggo"]
 [ext_resource type="Texture2D" uid="uid://dy2cimmexvyhg" path="res://Sprites/PhpATAK2.svg" id="8_odsmn"]
 [ext_resource type="Texture2D" uid="uid://dxvpisl5ah4wc" path="res://Sprites/PhpIDLE.svg" id="9_vonp1"]
 [ext_resource type="Texture2D" uid="uid://dh1xse8yukmyb" path="res://Sprites/PhpSMOKE.svg" id="10_trqt4"]
+[ext_resource type="Theme" uid="uid://b0bovyu2y7wb2" path="res://Theme/reset.tres" id="10_x06n1"]
+[ext_resource type="AudioStream" uid="uid://bjtwvvbj67880" path="res://sounds/The Champions.mp3" id="11_bceyt"]
 [ext_resource type="Texture2D" uid="uid://c0bodlxxc0m8x" path="res://Sprites/PhpULT.svg" id="11_k6ame"]
 [ext_resource type="Texture2D" uid="uid://bcs1cflx0s0a4" path="res://Sprites/PhpMOV.svg" id="12_rhxlb"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7hp3"]
-bg_color = Color(0.878431, 0.980392, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_offset = Vector2(0, 5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbkxn"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-corner_detail = 9
-shadow_color = Color(0.764706, 0, 0, 0.6)
-
-[sub_resource type="Theme" id="Theme_golfa"]
-default_font = ExtResource("2_k4ocl")
-default_font_size = 25
-Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_focus_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0, 0, 0, 1)
-Button/constants/h_separation = 3
-Button/font_sizes/font_size = 25
-Button/fonts/font = ExtResource("2_k4ocl")
-Button/styles/focus = SubResource("StyleBoxFlat_e7hp3")
-Button/styles/hover = ExtResource("3_dsto0")
-Button/styles/normal = SubResource("StyleBoxFlat_bbkxn")
-Button/styles/pressed = ExtResource("3_dsto0")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_asmec"]
 atlas = ExtResource("7_p5ggo")
@@ -289,24 +247,6 @@ offset_left = -5.0
 offset_top = 43.0
 offset_right = 630.0
 offset_bottom = 119.0
-
-[node name="restart" type="Button" parent="."]
-layout_mode = 0
-offset_left = 456.0
-offset_top = 250.0
-offset_right = 577.0
-offset_bottom = 281.0
-theme = SubResource("Theme_golfa")
-text = "Reset"
-
-[node name="restart2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 244.0
-offset_right = 167.0
-offset_bottom = 275.0
-theme = ExtResource("4_gkpsm")
-text = "Menu"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(303, 37)
